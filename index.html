@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Micronesian Artifacts Abroad</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: an archive drawer of object tags; each tag opens a sheet that traces the object back to its source. */
+:root {
+  --bg: #eef1ee;
+  --surface: #ffffff;
+  --sunk: #e2e7e3;
+  --ink: #1b2322;
+  --muted: #56625f;
+  --line: #cbd3cf;
+  --accent: #0e6863;      /* lagoon */
+  --accent-ink: #ffffff;
+  --site: #a8452c;        /* spondylus, marks Nan Madol */
+  --site-soft: #f6e2db;
+  --layer1: #0e6863;
+  --layer2: #6a5a1f;
+  --layer3: #7a3d6b;
+  --layer1-soft: #dcebe8;
+  --layer2-soft: #efe9d4;
+  --layer3-soft: #efe0eb;
+  --shadow: 0 1px 2px rgba(20,30,28,.06), 0 8px 24px rgba(20,30,28,.07);
+  --f-display: "Young Serif", Georgia, "Times New Roman", serif;
+  --f-body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #111615; --surface: #1a2120; --sunk: #222b29; --ink: #e5ebe8; --muted: #9aa8a4; --line: #33403d;
+  --accent: #5cc0b6; --accent-ink: #0d1514; --site: #e58a6b; --site-soft: #3a2620;
+  --layer1: #5cc0b6; --layer2: #d4bf72; --layer3: #d99cc8;
+  --layer1-soft: #1d302d; --layer2-soft: #2e2a1b; --layer3-soft: #2f2030;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25); color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #111615; --surface: #1a2120; --sunk: #222b29; --ink: #e5ebe8; --muted: #9aa8a4; --line: #33403d;
+  --accent: #5cc0b6; --accent-ink: #0d1514; --site: #e58a6b; --site-soft: #3a2620;
+  --layer1: #5cc0b6; --layer2: #d4bf72; --layer3: #d99cc8;
+  --layer1-soft: #1d302d; --layer2-soft: #2e2a1b; --layer3-soft: #2f2030;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25); color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1180px; margin: 0 auto; padding-block: 28px 64px; display: grid; gap: 28px; }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible, input:focus-visible, .card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 400; text-wrap: balance; margin: 0; line-height: 1.15; }
+.mono { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+.eyebrow { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+
+.concept-bar { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; font-size: 13px; color: var(--muted);
+  border: 1px dashed var(--line); border-radius: 8px; padding: 8px 12px; }
+.concept-bar strong { color: var(--ink); }
+
+header.intro { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 32px; align-items: end; }
+header.intro h1 { font-size: clamp(34px, 5vw, 56px); }
+header.intro p { max-width: 62ch; margin: 12px 0 0; color: var(--muted); font-size: 16px; }
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.fact { background: var(--surface); padding: 14px; display: grid; gap: 2px; }
+.fact b { font-family: var(--f-display); font-weight: 400; font-size: 28px; line-height: 1; font-variant-numeric: tabular-nums; }
+.fact span { font-size: 12.5px; color: var(--muted); line-height: 1.35; }
+
+.layers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.layer { border-radius: 10px; padding: 14px 16px; display: grid; gap: 4px; align-content: start; }
+.layer h3 { font-family: var(--f-body); font-weight: 700; font-size: 14px; display: flex; align-items: center; gap: 8px; }
+.layer p { margin: 0; font-size: 13.5px; color: var(--muted); }
+.dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+.l1 { background: var(--layer1-soft); } .l1 .dot { background: var(--layer1); }
+.l2 { background: var(--layer2-soft); } .l2 .dot { background: var(--layer2); }
+.l3 { background: var(--layer3-soft); } .l3 .dot { background: var(--layer3); }
+
+.stories { display: grid; gap: 12px; }
+.story-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.story { text-align: left; font: inherit; color: inherit; background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+  padding: 14px; display: grid; gap: 6px; cursor: pointer; align-content: start; }
+.story:hover { border-color: var(--accent); }
+.story[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.story b { font-family: var(--f-display); font-weight: 400; font-size: 18px; }
+.story span { font-size: 13px; color: var(--muted); }
+.story .count { font-family: var(--f-mono); font-size: 12px; color: var(--accent); }
+
+.tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.search { flex: 1 1 240px; min-width: 0; display: flex; }
+.search input { width: 100%; font: inherit; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 9px 12px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font: inherit; font-size: 13px; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 5px 11px; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.result-line { font-size: 13px; color: var(--muted); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; display: grid; grid-template-rows: 170px auto; cursor: pointer; text-align: left; font: inherit; color: inherit; padding: 0; }
+.card:hover { border-color: var(--accent); }
+.card .ph { background: var(--sunk); display: grid; place-items: center; overflow: hidden; position: relative; }
+.card .ph img { width: 100%; height: 100%; object-fit: contain; padding: 10px; mix-blend-mode: multiply; }
+:root[data-theme="dark"] .card .ph img { mix-blend-mode: normal; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .card .ph img { mix-blend-mode: normal; } }
+.tag { position: absolute; left: 8px; top: 8px; font-family: var(--f-mono); font-size: 11.5px; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 2px 6px; }
+.card .body { padding: 12px; display: grid; gap: 4px; align-content: start; }
+.card .name { font-weight: 600; font-size: 15px; line-height: 1.3; }
+.card .meta { font-size: 12.5px; color: var(--muted); line-height: 1.4; }
+.pills { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.pill { font-size: 11.5px; border-radius: 4px; padding: 1px 6px; background: var(--sunk); color: var(--ink); white-space: nowrap; }
+.pill.site { background: var(--site-soft); color: var(--site); font-weight: 600; }
+.pill.acq-unclear, .pill.acq-none { border: 1px dashed var(--line); background: transparent; }
+.set { display: grid; gap: 12px; }
+.set-head { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; }
+.set-head h2 { font-size: 24px; }
+.set-note { margin: -6px 0 0; }
+.card.pick { border-color: var(--accent); }
+.empty { padding: 32px; text-align: center; color: var(--muted); border: 1px dashed var(--line); border-radius: 10px; }
+
+section.how { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; border-top: 1px solid var(--line); padding-top: 28px; }
+section.how h2 { font-size: 26px; margin-bottom: 10px; }
+section.how ol, section.how ul { margin: 0; padding-left: 20px; display: grid; gap: 8px; max-width: 62ch; }
+section.how p { max-width: 62ch; margin: 0 0 10px; }
+.small { font-size: 13px; color: var(--muted); }
+
+/* Detail sheet */
+.scrim { position: fixed; inset: 0; background: rgba(10,16,15,.45); z-index: 20; }
+.sheet { position: fixed; top: 0; right: 0; bottom: 0; width: min(720px, 100%); background: var(--bg); z-index: 21; overflow-y: auto;
+  border-left: 1px solid var(--line); box-shadow: var(--shadow);
+  padding: calc(18px + env(safe-area-inset-top, 0px)) max(18px, env(safe-area-inset-right, 0px)) calc(40px + env(safe-area-inset-bottom, 0px)) 18px; }
+.sheet-head { display: flex; justify-content: space-between; gap: 12px; align-items: start; }
+.sheet h2 { font-size: clamp(26px, 4vw, 34px); }
+.close { font: inherit; font-size: 14px; background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; cursor: pointer; flex: none; }
+.sheet-sub { color: var(--muted); margin-top: 4px; font-size: 14px; }
+.gallery { display: grid; gap: 10px; margin-top: 16px; }
+.gallery figure { margin: 0; background: var(--sunk); border-radius: 10px; overflow: hidden; }
+.gallery img { display: block; width: 100%; max-height: 420px; object-fit: contain; padding: 12px; }
+.gallery figcaption { font-size: 12px; color: var(--muted); padding: 6px 12px 10px; }
+.block { margin-top: 18px; border-radius: 10px; padding: 16px; display: grid; gap: 10px; }
+.block h3 { font-family: var(--f-body); font-weight: 700; font-size: 14px; display: flex; align-items: center; gap: 8px; }
+.kv { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 6px 14px; font-size: 14px; margin: 0; }
+.kv dt { color: var(--muted); }
+.kv dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.de { display: block; font-size: 12.5px; color: var(--muted); font-style: italic; }
+.note { font-size: 14px; margin: 0; max-width: 62ch; }
+.src { font-size: 12.5px; color: var(--muted); }
+.placeholder { border: 1px dashed var(--layer3); border-radius: 8px; padding: 10px 12px; font-size: 13.5px; color: var(--muted); }
+.trace { margin-top: 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 12px; }
+.trace h3 { font-family: var(--f-body); font-weight: 700; font-size: 14px; }
+.trace-row { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 6px 14px; font-size: 14px; align-items: baseline; }
+.trace-row > span:first-child { color: var(--muted); }
+.trace-row a, .trace-row code { overflow-wrap: anywhere; }
+.copy { font: inherit; font-size: 12.5px; margin-left: 6px; background: var(--sunk); color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 2px 8px; cursor: pointer; }
+
+@media (max-width: 860px) {
+  header.intro { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .story-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .layers { grid-template-columns: minmax(0, 1fr); }
+  section.how { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 520px) {
+  .facts { grid-template-columns: minmax(0, 1fr); }
+  .story-row { grid-template-columns: minmax(0, 1fr); }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .card { grid-template-rows: 130px auto; }
+  .kv, .trace-row { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .kv dd { margin-bottom: 8px; }
+}
+@media (prefers-reduced-motion: no-preference) { .card, .story, .chip { transition: border-color .15s, background-color .15s; } }
+
+/* v3: photo banner, state buttons, About tab */
+:root { --band: #18201f; --band-ink: #eef2f0; --band-muted: #a9b7b3; --tile: #2a3432; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --band: #0b0f0e; --band-ink: #e8eeeb; --band-muted: #93a29e; --tile: #1c2524; } }
+:root[data-theme="dark"] { --band: #0b0f0e; --band-ink: #e8eeeb; --band-muted: #93a29e; --tile: #1c2524; }
+
+.wrap { padding-block: 14px 64px; gap: 22px; }
+.topbar { display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: center; justify-content: space-between; }
+.brand { font-family: var(--f-display); font-size: 20px; color: var(--ink); }
+.draft-tag { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; font-weight: 700; color: var(--muted); border: 1px dashed var(--line); border-radius: 4px; padding: 2px 6px; margin-left: 8px; vertical-align: 3px; font-family: var(--f-body); }
+.views { display: inline-flex; background: var(--sunk); border-radius: 999px; padding: 3px; gap: 2px; }
+.view-btn { font: inherit; font-size: 14px; font-weight: 600; border: 0; background: transparent; color: var(--muted); border-radius: 999px; padding: 7px 14px; cursor: pointer; }
+.view-btn[aria-selected="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,.12); }
+
+.banner { background: var(--band); color: var(--band-ink); border-radius: 14px; overflow: hidden; display: grid; }
+.strip { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 2px; background: var(--band); }
+.strip button { all: unset; cursor: pointer; aspect-ratio: 1 / 1; background: var(--tile); overflow: hidden; display: block; max-width: 100%; }
+.strip img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s; }
+.strip button:hover img, .strip button:focus-visible img { transform: scale(1.06); }
+.strip button:focus-visible { outline: 2px solid var(--band-ink); outline-offset: -2px; }
+.banner-text { padding: 20px 22px 22px; display: grid; gap: 6px; }
+.banner-text h1 { font-size: clamp(26px, 4vw, 40px); color: var(--band-ink); }
+.banner-text h1 .num { font-variant-numeric: tabular-nums; }
+.banner-text p { margin: 0; color: var(--band-muted); max-width: 64ch; font-size: 15px; }
+
+.state-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.state-btn { font: inherit; display: inline-flex; align-items: baseline; gap: 8px; background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 10px; padding: 10px 16px; cursor: pointer; }
+.state-btn b { font-family: var(--f-display); font-weight: 400; font-size: 19px; }
+.state-btn span { font-family: var(--f-mono); font-size: 12px; color: var(--muted); }
+.state-btn[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.state-btn[aria-pressed="true"] span { color: var(--accent-ink); opacity: .85; }
+.state-btn:hover { border-color: var(--accent); }
+.state-note { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; font-size: 14px; max-width: 80ch; }
+
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding-block: 10px; display: grid; gap: 10px; border-bottom: 1px solid var(--line); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.bar-top { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.bar .search { flex: 1 1 260px; min-width: 0; display: flex; }
+.bar input[type=search] { width: 100%; font: inherit; font-size: 15px; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 9px 12px; }
+.filter-toggle { font: inherit; font-size: 14px; background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; cursor: pointer; }
+.filter-toggle .n { font-family: var(--f-mono); font-size: 12px; color: var(--accent); margin-left: 4px; }
+.count { font-size: 13px; color: var(--muted); }
+.reset { font: inherit; font-size: 13px; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.filters { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.filters[hidden], .strip[hidden] { display: none; }
+.field { display: grid; gap: 4px; min-width: 0; }
+.field label { font-size: 12px; color: var(--muted); font-weight: 600; }
+.field select { width: 100%; min-width: 0; font: inherit; font-size: 14px; color: var(--ink); background-color: var(--surface); background-image: var(--chev); background-repeat: no-repeat; background-position: right 12px center; background-size: 12px 8px; border: 1px solid var(--line); border-radius: 8px; padding: 8px 36px 8px 10px; -webkit-appearance: none; -moz-appearance: none; appearance: none; text-overflow: ellipsis; cursor: pointer; }
+.field select:hover { border-color: var(--accent); }
+:root { --chev: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%2356625f' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --chev: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%239aa8a4' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); } }
+:root[data-theme="dark"] { --chev: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%239aa8a4' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+.storychips { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+.storychips::-webkit-scrollbar { display: none; }
+.schip { font: inherit; font-size: 13px; white-space: nowrap; flex: none; background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; cursor: pointer; }
+.schip span { font-family: var(--f-mono); font-size: 11.5px; color: var(--muted); margin-left: 5px; }
+.schip[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.schip[aria-pressed="true"] span { color: var(--accent-ink); }
+.schip.lbl { border: 0; background: none; color: var(--muted); cursor: default; padding-inline: 0 4px; font-weight: 600; }
+
+.set { display: grid; gap: 12px; scroll-margin-top: 140px; }
+.set-head { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; }
+.set-head h2 { font-size: 24px; }
+.cat-note { margin: -6px 0 0; max-width: 72ch; }
+.card.pick { border-color: var(--accent); }
+.more { font: inherit; font-size: 14px; color: var(--ink); background: var(--surface); border: 1px dashed var(--line); border-radius: 10px; padding: 14px; cursor: pointer; text-align: left; display: grid; gap: 2px; }
+.more b { font-weight: 600; } .more span { font-size: 13px; color: var(--muted); }
+.more:hover { border-color: var(--accent); }
+.pill.q { background: var(--layer3-soft); color: var(--layer3); font-weight: 600; }
+.pill.maybe { background: var(--layer2-soft); color: var(--layer2); font-weight: 600; }
+.sheet-nav { display: flex; gap: 8px; flex: none; }
+.navbtn { font: inherit; font-size: 13px; background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; cursor: pointer; }
+.navbtn:disabled { opacity: .4; cursor: default; }
+.sheet-pos { font-size: 12.5px; color: var(--muted); margin-top: 10px; }
+
+.intro { font-size: 17px; line-height: 1.5; max-width: 62ch; color: var(--ink); margin: 0 0 4px; }
+/* About view */
+.about { display: grid; gap: 28px; max-width: 900px; }
+.about h2 { font-size: 30px; }
+.about h3 { font-family: var(--f-display); font-weight: 400; font-size: 21px; margin-bottom: 8px; }
+.about p, .about li { max-width: 66ch; }
+.about ol { margin: 0; padding-left: 22px; display: grid; gap: 10px; }
+.about section { display: grid; gap: 8px; }
+.parts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.example { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; font-size: 14px; display: grid; gap: 6px; }
+.example .mono { font-size: 13px; }
+
+@media (max-width: 860px) {
+  .strip { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .parts { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 520px) {
+  .state-btn { padding: 8px 12px; } .state-btn b { font-size: 17px; }
+  .banner-text { padding: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { .strip img { transition: none; } }
+
+.lrows { display: grid; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--surface); }
+.lrow { all: unset; box-sizing: border-box; display: grid; grid-template-columns: 110px minmax(0, 1.2fr) minmax(0, 1.6fr) 120px; gap: 4px 14px; align-items: baseline; padding: 10px 14px; border-top: 1px solid var(--line); cursor: pointer; font-size: 14px; }
+.lrow:first-child { border-top: 0; }
+.lrow:hover { background: var(--sunk); }
+.lrow:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.lr-inv { font-size: 12.5px; color: var(--muted); }
+.lr-name { font-weight: 600; min-width: 0; }
+.lr-meta, .lr-mus { font-size: 13px; color: var(--muted); min-width: 0; }
+.listhead { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; margin-top: 6px; }
+.listhead b { font-size: 15px; }
+.pill.museum { background: transparent; border: 1px solid var(--line); color: var(--muted); }
+.nophoto { margin-top: 16px; background: var(--sunk); border-radius: 10px; padding: 18px; font-size: 14px; color: var(--muted); }
+@media (max-width: 720px) { .lrow { grid-template-columns: minmax(0, 1fr); gap: 2px; } .lr-mus { display: none; } }
+</style>
+
+<div class="wrap">
+  <div class="topbar">
+    <span class="brand">Micronesian Artifacts Abroad</span>
+    <div class="views" role="tablist" aria-label="Views">
+      <button class="view-btn" role="tab" type="button" data-view="collection" aria-selected="true" id="tab-collection">Collection</button>
+      <button class="view-btn" role="tab" type="button" data-view="about" aria-selected="false" id="tab-about">About &amp; checking</button>
+    </div>
+  </div>
+
+  <div id="view-collection" class="stories" role="tabpanel" aria-labelledby="tab-collection">
+    <p class="intro">More than 8,000 artifacts from Pohnpei, Chuuk, Yap and Kosrae are held in museums abroad. Find your island, see the photo, and follow each one back to the museum that holds it.</p>
+    <div class="state-row" id="states" aria-label="Choose a state"></div>
+
+    <section class="banner" aria-label="Featured artifacts">
+      <div class="strip" id="strip"></div>
+      <div class="banner-text">
+        <h1 id="banner-title"></h1>
+        <p>Each artifact links back to the museum's own record of it, so anyone can check where it is and how it got there.</p>
+      </div>
+    </section>
+
+    <div class="state-note" id="state-note" hidden></div>
+
+    <div class="bar">
+      <div class="bar-top">
+        <label class="search" for="q"><input id="q" type="search" placeholder="Search by name, material, collector or catalog number" autocomplete="off" aria-label="Search the collection"></label>
+        <button class="filter-toggle" type="button" id="ftoggle" aria-expanded="false" aria-controls="filters">Filters<span class="n" id="fcount"></span></button>
+        <span class="count" id="count" aria-live="polite"></span>
+        <button class="reset" type="button" id="reset" hidden>Clear all</button>
+      </div>
+      <div class="filters" id="filters" hidden>
+        <div class="field"><label for="f-place">Island or place</label><select id="f-place"></select></div>
+        <div class="field"><label for="f-mus">Museum</label><select id="f-mus"></select></div>
+        <div class="field"><label for="f-acq">How the museum got it</label><select id="f-acq"></select></div>
+        <div class="field"><label for="f-col">Collector</label><select id="f-col"></select></div>
+        <div class="field"><label for="f-sort">Sort</label><select id="f-sort"><option value="inv">Catalog number</option><option value="old">Oldest first</option><option value="new">Newest first</option></select></div>
+      </div>
+      <div class="storychips" id="chips"></div>
+    </div>
+
+    <div id="sections" class="stories"></div>
+  </div>
+
+  <div id="view-about" class="about" role="tabpanel" aria-labelledby="tab-about" hidden>
+    <section>
+      <h2>About this collection</h2>
+      <p>This collection lists artifacts from the Federated States of Micronesia that are held in museums outside Micronesia. It now draws on five museums: the Ethnologisches Museum in Berlin, MARKK in Hamburg, the Rautenstrauch-Joest-Museum in Cologne, the Museum Natur und Mensch in Freiburg and the Pitt Rivers Museum in Oxford.</p>
+      <p>Records with photos come from the museums' online catalogs. Hamburg has not published photos yet, so its artifacts are listed from the museum's own published lists, with a link to the page each entry is on.</p>
+      <p>Records of human remains, and of items made from human hair, are not shown.</p>
+      <p>Nothing here is a guess. Every fact on an artifact's page comes from the museum's record or from a named, published source.</p>
+    </section>
+
+    <section>
+      <h3>What each artifact page shows</h3>
+      <div class="parts">
+        <div class="layer l1"><h3 style="font-family:var(--f-body);font-size:14px;font-weight:700;margin:0;display:flex;gap:8px;align-items:center"><span class="dot"></span>Museum record</h3><p>What the museum's catalog says, translated into English, with the original wording underneath.</p></div>
+        <div class="layer l2"><h3 style="font-family:var(--f-body);font-size:14px;font-weight:700;margin:0;display:flex;gap:8px;align-items:center"><span class="dot"></span>History sources</h3><p>Published research and other museums' records about the artifact or the person who collected it. Each note names its source.</p></div>
+        <div class="layer l3"><h3 style="font-family:var(--f-body);font-size:14px;font-weight:700;margin:0;display:flex;gap:8px;align-items:center"><span class="dot"></span>Community knowledge</h3><p>Names, uses and meaning from people who know the artifact's culture. Each entry will say who shared it.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h3>How to check a record yourself</h3>
+      <ol>
+        <li>Open any artifact and copy its <b>catalog number</b> from the "Follow it back" box.</li>
+        <li>Go to the museum's own online catalog. For Berlin that is <a href="https://search.smb.museum/en" target="_blank" rel="noopener">search.smb.museum</a>. Search for the number, or use the artifact's permanent link.</li>
+        <li>Compare the museum's page with what is shown here. The original German is printed under each translation, so differences are easy to spot.</li>
+        <li>To ask the museum about an artifact, email the address in the "Follow it back" box and quote the catalog number.</li>
+      </ol>
+      <div class="example"><b>Example</b><span>Dance paddle, catalog number <span class="mono">VI 27317</span>, Ethnologisches Museum, Berlin</span><span>Permanent link: <a href="https://id.smb.museum/object/828711" target="_blank" rel="noopener">id.smb.museum/object/828711</a></span></div>
+      <p class="small">Each record also links to the Internet Archive's Wayback Machine, which may hold earlier copies of the museum's page if the museum changes or removes it.</p>
+    </section>
+
+    <section>
+      <h3>How returns happen</h3>
+      <p>Returns of artifacts from museums usually start with a request from the government of the place they came from. In Germany, federal, state and city authorities agreed shared principles in 2019 for collections from colonial contexts, and returns since then have mostly followed requests from countries of origin.</p>
+      <p>In the Federated States of Micronesia, heritage matters are handled by the Office of National Archives, Culture and Historic Preservation (NACH) in Palikir, and by each state's historic preservation office.</p>
+      <p>This site does not make requests. It lists what is held and where, so anyone can see it and follow it back.</p>
+    </section>
+
+    <section>
+      <h3>Words used on this site</h3>
+      <p><b>Not recorded</b> means the museum's public record does not say. The museum's inventory books may hold more. <b>Unclear</b> is the museum's own word for how an artifact arrived. A question mark after a name or place is the museum's own uncertainty.</p>
+    </section>
+
+    <section>
+      <h3>Photos and records</h3>
+      <p>Photos are from the Staatliche Museen zu Berlin, Ethnologisches Museum, credited to the photographer named on each image. Most are licensed CC BY-NC-SA 4.0: they may be shared with credit, not sold, and shared under the same terms. Photos from Cologne and Freiburg are credited on each image; Cologne's are licensed CC BY-NC-ND 4.0, which allows sharing with credit but no changes. Records were accessed on 22 October 2026.</p>
+    </section>
+  </div>
+</div>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheet-title"></aside>
+
+<script id="meta" type="application/json">{"counts": {"Pohnpei": {"n": 1480, "photos": 338, "packs": 1, "maybe": 0}, "Chuuk": {"n": 2894, "photos": 378, "packs": 2, "maybe": 9}, "Yap": {"n": 3803, "photos": 552, "packs": 3, "maybe": 1}, "Kosrae": {"n": 463, "photos": 54, "packs": 1, "maybe": 2}}, "museums": {"Berlin, Ethnologisches Museum": {"museum": "Ethnologisches Museum, Staatliche Museen zu Berlin", "city": "Berlin, Germany", "email": "em@smb.spk-berlin.de", "label": "Open the record on search.smb.museum"}, "Cologne, Rautenstrauch-Joest-Museum": {"museum": "Rautenstrauch-Joest-Museum", "city": "Cologne, Germany", "email": "", "label": "Open the record in the German colonial-collections portal"}, "Freiburg, Museum Natur und Mensch": {"museum": "Museum Natur und Mensch, Städtische Museen Freiburg", "city": "Freiburg, Germany", "email": "provenienzforschung-mnm@stadt.freiburg.de", "label": "Open the record in the German colonial-collections portal"}, "Oxford, Pitt Rivers Museum": {"museum": "Pitt Rivers Museum, University of Oxford", "city": "Oxford, United Kingdom", "email": "", "label": "Open an example record (1899.82.5.29) at the Pitt Rivers Museum"}, "Hamburg, MARKK": {"museum": "MARKK (Museum am Rothenbaum)", "city": "Hamburg, Germany", "email": "info@markk-hamburg.de", "label": "Collection list: Hamburg South Seas Expedition, page 50"}}}</script>
+<script>
+(function () {
+  const META = JSON.parse(document.getElementById('meta').textContent);
+  const MUS = META.museums;
+  const $ = s => document.querySelector(s);
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const yearOf = i => { const m = /(\d{4})/.exec(i.date || ''); return m ? +m[1] : 9999; };
+  const shortCol = c => c === 'Unbekannt' ? 'Unknown' : String(c || '').replace(/\s*\(.*$/, '').replace(/,.*$/, '').replace(/;.*$/, '');
+  const prevEn = s => s.replace('Königliche Preußische Kunstkammer, Ethnografische Abteilung', 'Royal Prussian Kunstkammer (art and curiosity collection), ethnographic department');
+  const DEF = { previous: [], nanmadol: false, mat_de: '', mat_en: '', dims: [], acq_de: '', permalink: '', updated: '', group: 'other', images: [], pick: false, belt: false, mokil_mask: false, maybe: [], list_only: false, extra_note: '', sensitive: false, grave: false, term_de: '', date_de: '' };
+  const STATES = ['Pohnpei', 'Chuuk', 'Yap', 'Kosrae'];
+  const DATA = {}, PACK = {}, loading = {};
+  const FEATURE = { Pohnpei: ['VI 6531', 'VI 27318', 'VI 982', 'VI 26166', 'VI 2094', 'VI 453', 'VI 6530', 'VI 18130', 'VI 6521', 'VI 5240', 'VI 23196'] };
+  const PAGE_CARDS = 40, PAGE_ROWS = 25;
+
+  const SOURCES = {
+    spenAdmin: { label: 'Spennemann, "German Administrators in the Marshall Islands", Charles Sturt University', url: 'https://micronesia.csu.edu.au/Marshalls/html/german2/admin.html' },
+    spenSkulls: { label: 'Spennemann (2006), "Skulls as Curios, Crania as Science", Micronesian Journal of the Humanities and Social Sciences 5', url: 'https://marshall.csu.edu.au/MJHSS/Issue2006/MJHSS2006_105.pdf' },
+    prm: { label: 'Pitt Rivers Museum, Oxford, record 1899.82.5.29', url: 'https://odp-test.prm.ox.ac.uk/item/prm-object-215877/unfinished-shell-shank-of-fishing-hook-from-excavations-at-the-central-vault-at-nan-madol' },
+    hpo: { label: 'Pohnpei State Historic Preservation Office, German Cemetery, Kolonia', url: 'https://hpo.pohnpeistate.gov.fm/?p=272' },
+    hambruch: { label: 'Neue Deutsche Biographie, "Hambruch, Paul"', url: 'https://www.deutsche-biographie.de/gnd139873929.html' },
+    markkOz: { label: 'MARKK, Oceania department page', url: 'https://markk-hamburg.de/en/sammlungen/object-collections/oceania/' },
+    catalog: { label: 'Comparison of the Berlin catalog records for these belts', url: '' },
+    freiburg: { label: 'Museum Natur und Mensch, Freiburg, record II/0818', url: 'https://ccc.deutsche-digitale-bibliothek.de/en/item/RZ7GSSC7FEKPNAQ7PIEHWZRHA7HJ3ZNW' },
+  };
+  function notesFor(i) {
+    const n = [];
+    if (i.group === 'berg') {
+      n.push({ t: 'Victor Berg was the German district officer of Pohnpei from 1 September 1901 until he died on 30 April 1907. German records give sunstroke and exhaustion while surveying Nan Madol; Pohnpeians hold that he died because he dug up the tombs there.', s: ['spenAdmin'] });
+      n.push({ t: 'Pohnpei\'s Historic Preservation Office records that a German governor buried in the Kolonia German cemetery died mysteriously in 1907, the same day he dug up the tomb of the first king.', s: ['hpo'] });
+      if ((i.acq_de || '').includes('Nachlass')) n.push({ t: 'This paddle\'s record says it was bought from Berg\'s estate in 1908, the year after his death.', s: [] });
+    }
+    if ((i.acq_de || '').includes('Hahl')) n.push({ t: 'Albert Hahl ran Pohnpei for Germany before Berg. Berg first came in 1901 as Hahl\'s temporary replacement.', s: ['spenAdmin'] });
+    if (i.group === 'christian' && i.source !== 'prm') n.push({ t: 'The Berlin record says only that this came from Nan Madol before 1904, collected by F.W. Christian. Separately, the Pitt Rivers Museum in Oxford holds shell fishhook shanks it bought in 1899, recorded as coming from excavations at the central vault of Nan Madol, and its record points to Christian\'s book The Caroline Islands (1899), from page 85, for the account of that digging.', s: ['prm'] });
+    if (i.group === 'finsch') n.push({ t: 'In 1878 the German zoologist and ethnographer Otto Finsch traveled through Kiribati, the Marshall Islands and Pohnpei, collecting objects and specimens for European museums and scientific societies.', s: ['spenSkulls'] });
+    if (i.group === 'hambruch' && i.state === 'Pohnpei') n.push({ t: 'Paul Hambruch did the ethnographic work on Pohnpei for the Hamburg South Seas Expedition of 1908 to 1910. His results were published as the three-volume Ponape (1932 to 1936).', s: ['hambruch'] });
+    if (i.source && i.source.startsWith('markk') ) n.push({ t: 'MARKK has not yet put its collection online with photos. It published these lists of its holdings so that people from the places of origin can see what it holds, and it asks questions to go to its regional curators.', s: ['markkOz'] });
+    if (i.nanmadol && i.group !== 'christian') n.push({ t: 'Nan Madol\'s burial vaults were disturbed by outsiders long before German rule. European residents reported that two American whaling captains looted the vaults of Nan Douwas for bones in 1839.', s: ['spenSkulls'] });
+    if (i.grave) n.push({ t: 'The museum\'s list records the find place as a grave: ' + i.place_en.split('— ')[1] + '.', s: [] });
+    if (i.belt) n.push({ t: 'Berlin records these woven belts as one kind of object, and they are close in size: the ones measured laid flat run about 160 to 190 cm long and 11 to 14.5 cm wide.', s: ['catalog'] });
+    if (i.mokil_mask) n.push({ t: 'Open question for the museum: masks in this style are best known from the Mortlock Islands. The record lists Mokil but gives no collector, acquisition note or description that explains the label. It is one of six mask models (VI 46023 to VI 46028) with the same entry.', s: [], q: true });
+    if (i.extra_note) n.push({ t: i.extra_note, s: i.source === 'freiburg' ? ['freiburg'] : [] });
+    return n;
+  }
+
+  const CATS = [
+    { key: 'dance', title: 'Dance', note: 'Dance paddles, staffs, skirts and headdresses.' },
+    { key: 'adorn', title: 'Adornment', note: 'Necklaces, neck ornaments, armbands, rings, earrings, combs and headbands.' },
+    { key: 'cloth', title: 'Belts, skirts and mats', note: 'Woven belts, fiber skirts, mats, hats, fans, bags and baskets.' },
+    { key: 'weaving', title: 'Weaving and fiber work', note: 'Looms, warping frames, thread and fiber.' },
+    { key: 'canoe', title: 'Canoes and navigation', note: 'Canoes, canoe models, paddles, sails and bailers.' },
+    { key: 'money', title: 'Money and valuables', note: 'Stone money and other valuables.' },
+    { key: 'tools', title: 'Tools, weapons and household', note: 'Adzes, slings, spears, fishing gear, bowls and other everyday things.' },
+    { key: 'tattoo', title: 'Tattooing tools', note: 'Tools used for tattooing.' },
+    { key: 'mask', title: 'Masks', note: 'Masks and mask models.' },
+    { key: 'fragments', title: 'Fragments and shells', note: 'Small pieces and raw materials: broken fishhooks and armbands, worked shell and food shells.', collapsed: true },
+  ];
+  const STORIES = [
+    { key: 'picks', title: 'Selected', test: i => i.pick },
+    { key: 'berg', title: 'Victor Berg\'s paddles', test: i => i.group === 'berg' },
+    { key: 'belts', title: 'Woven red belts', test: i => i.belt },
+    { key: 'nanmadol', title: 'From Nan Madol', test: i => i.nanmadol },
+    { key: 'graves', title: 'Recorded as from graves', test: i => i.grave },
+    { key: 'hambruch', title: 'Hamburg expedition 1908–1910', test: i => i.source === 'markk-sudsee' },
+    { key: 'tattoo', title: 'Tattooing tools', test: i => i.cat === 'tattoo' },
+    { key: 'early', title: 'Before 1880', test: i => yearOf(i) < 1880 },
+    { key: 'photos', title: 'With photos', test: i => i.images.length },
+    { key: 'unclear', title: 'How it got there is unknown', test: i => i.acq_type === 'Unclear' || i.acq_type === 'Not recorded' },
+  ];
+  const ACQS = [['all', 'Any'], ['Purchased', 'Purchased'], ['Gift', 'Gift or handed over'], ['Expedition', 'Collected on an expedition'], ['Unclear', 'Unclear'], ['Not recorded', 'Not recorded']];
+  const acqTest = (k, i) => k === 'all' || (k === 'Gift' ? (i.acq_type === 'Gift' || i.acq_type === 'Received') : i.acq_type === k);
+
+  const S = { state: 'Pohnpei', story: null, q: '', place: 'all', mus: 'all', acq: 'all', col: 'all', sort: 'inv', open: {}, shown: {} };
+  let current = [], byId = {};
+
+  const fname = s => String(s).replace(/^pack:/, '');
+  const imgSrc = im => im.src.startsWith('pack:') ? (PACK[fname(im.src)] || '') : im.src;
+
+  async function loadState(st) {
+    if (DATA[st]) return;
+    if (loading[st]) return loading[st];
+    loading[st] = (async () => {
+      const r = await fetch(`data/${st.toLowerCase()}.json`);
+      const rows = await r.json();
+      rows.forEach(i => { for (const k in DEF) if (!(k in i)) i[k] = Array.isArray(DEF[k]) ? [] : DEF[k]; });
+      DATA[st] = rows;
+      rows.forEach(i => { byId[i.id] = i; });
+      const n = (META.counts[st] || {}).packs || 0;
+      Promise.all(Array.from({ length: n }, (_, k) => fetch(`imgpack/${st.toLowerCase()}-${k}.json`).then(r => r.json()).then(p => Object.assign(PACK, p)).then(() => { if (S.state === st) paintPending(); }).catch(() => {})));
+    })();
+    return loading[st];
+  }
+  function paintPending() {
+    document.querySelectorAll('img[data-pack]').forEach(img => { const u = PACK[img.dataset.pack]; if (u) { img.src = u; img.removeAttribute('data-pack'); } });
+  }
+
+  const opts = (sel, pairs, val) => { $(sel).innerHTML = pairs.map(([v, l]) => `<option value="${esc(v)}"${v === val ? ' selected' : ''}>${esc(l)}</option>`).join(''); };
+  const countBy = (list, f) => { const c = {}; list.forEach(i => { const k = f(i); c[k] = (c[k] || 0) + 1; }); return c; };
+  const baseOf = st => STATES.flatMap(s => DATA[s] || []).filter(i => i.state === st || i.maybe.includes(st));
+
+  function buildFilters() {
+    const base = baseOf(S.state);
+    const pc = countBy(base, i => i.island), mc = countBy(base, i => i.mus), cc = countBy(base, i => shortCol(i.collector));
+    opts('#f-place', [['all', 'All places']].concat(Object.keys(pc).sort((a, b) => pc[b] - pc[a]).map(k => [k, `${k} (${pc[k]})`])), S.place);
+    opts('#f-mus', [['all', 'All museums']].concat(Object.keys(mc).sort((a, b) => mc[b] - mc[a]).map(k => [k, `${k} (${mc[k]})`])), S.mus);
+    opts('#f-acq', ACQS, S.acq);
+    opts('#f-col', [['all', 'Anyone']].concat(Object.keys(cc).sort((a, b) => cc[b] - cc[a]).map(k => [k, `${k} (${cc[k]})`])), S.col);
+  }
+
+  function renderStates() {
+    $('#states').innerHTML = STATES.map(s => {
+      const c = META.counts[s] || {};
+      return `<button class="state-btn" type="button" data-state="${s}" aria-pressed="${s === S.state}"><b>${s}</b><span>${(c.n || 0).toLocaleString('en-US')}</span></button>`;
+    }).join('');
+  }
+
+  function renderBanner(base) {
+    const st = S.state, direct = base.filter(i => i.state === st);
+    const withImg = direct.filter(i => i.images.length && i.cat !== 'fragments' && i.cat !== 'mask');
+    let feat = (FEATURE[st] || []).map(k => withImg.find(i => i.inv === k)).filter(Boolean);
+    if (feat.length < 8) {
+      const used = new Set(feat.map(i => i.id)), bycat = {};
+      withImg.forEach(i => { if (!used.has(i.id)) (bycat[i.cat] = bycat[i.cat] || []).push(i); });
+      const keys = Object.keys(bycat); let k = 0, guard = 0;
+      while (feat.length < 8 && guard++ < 200 && keys.length) { const arr = bycat[keys[k % keys.length]]; const pick = arr && arr.shift(); if (pick) feat.push(pick); k++; }
+    }
+    feat = feat.slice(0, 8);
+    $('#strip').innerHTML = feat.map(i => { const im = i.images[0], src = imgSrc(im); return `<button type="button" data-id="${i.id}" aria-label="${esc(i.term_en)}, ${esc(i.inv)}"><img ${src ? `src="${src}"` : `data-pack="${esc(fname(im.src))}"`} alt=""></button>`; }).join('');
+    $('#strip').hidden = !feat.length;
+    const nm = (META.counts[st] || {}).n || direct.length;
+    const museums = new Set(direct.map(i => i.mus)).size;
+    $('#banner-title').innerHTML = `<span class="num">${nm.toLocaleString('en-US')}</span> artifacts from ${esc(st)} in ${museums} museum${museums === 1 ? '' : 's'} abroad`;
+  }
+
+  function card(i) {
+    const im = i.images[0];
+    const src = im ? imgSrc(im) : '';
+    const col = i.collector && i.collector !== 'Not recorded' ? ' · ' + esc(shortCol(i.collector)) : '';
+    const acq = i.acq_type === 'Unclear' ? 'acq-unclear' : i.acq_type === 'Not recorded' ? 'acq-none' : '';
+    const maybe = S.state !== i.state && i.maybe.includes(S.state) ? `<span class="pill maybe">Possibly ${esc(S.state)}</span>` : '';
+    return `<button class="card${i.pick ? ' pick' : ''}" type="button" data-id="${i.id}" aria-label="${esc(i.term_en)}, ${esc(i.inv)}">
+      <div class="ph">${im ? `<img ${src ? `src="${src}"` : `data-pack="${esc(fname(im.src))}"`} alt="${esc(i.term_en)}" loading="lazy">` : ''}<span class="tag">${esc(i.inv)}</span></div>
+      <div class="body"><div class="name">${esc(i.term_en)}</div>
+        <div class="meta">${esc(i.place_en)}<br>${esc(i.date)}${col}</div>
+        <div class="pills">${maybe}${i.nanmadol ? '<span class="pill site">Nan Madol</span>' : ''}${i.mokil_mask || i.sensitive ? '<span class="pill q">Open question</span>' : ''}<span class="pill museum">${esc(i.mus.split(',')[0])}</span><span class="pill ${acq}">${esc(i.acq_type)}</span></div>
+      </div></button>`;
+  }
+  function row(i) {
+    const col = i.collector && i.collector !== 'Not recorded' ? esc(shortCol(i.collector)) : '';
+    return `<button class="lrow" type="button" data-id="${i.id}"><span class="lr-inv mono">${esc(i.inv)}</span><span class="lr-name">${esc(i.term_en)}${i.nanmadol ? ' <span class="pill site">Nan Madol</span>' : ''}</span><span class="lr-meta">${esc(i.place_en)} · ${esc(i.date)}${col ? ' · ' + col : ''}</span><span class="lr-mus">${esc(i.mus.split(',')[0])}</span></button>`;
+  }
+
+  function render() {
+    renderStates();
+    if (!DATA[S.state]) {
+      $('#sections').innerHTML = '<div class="empty">Loading objects…</div>';
+      loadState(S.state).then(() => { buildFilters(); render(); });
+      return;
+    }
+    const base = baseOf(S.state);
+    renderBanner(base);
+    const st = STORIES.find(s => s.key === S.story);
+    let list = base.filter(i => (!st || st.test(i)) && (S.place === 'all' || i.island === S.place) && (S.mus === 'all' || i.mus === S.mus) &&
+      acqTest(S.acq, i) && (S.col === 'all' || shortCol(i.collector) === S.col) &&
+      (!S.q || [i.inv, i.term_en, i.term_de, i.mat_en, i.mat_de, i.collector, i.place_en, i.acq_en, i.mus].join(' ').toLowerCase().includes(S.q)));
+    if (S.sort === 'old') list = list.slice().sort((a, b) => yearOf(a) - yearOf(b));
+    if (S.sort === 'new') list = list.slice().sort((a, b) => yearOf(b) - yearOf(a));
+
+    const chips = STORIES.map(s => ({ s, c: base.filter(s.test).length })).filter(x => x.c && x.c < base.length);
+    $('#chips').innerHTML = chips.length ? '<span class="schip lbl">Stories</span>' + chips.map(({ s, c }) => `<button class="schip" type="button" data-story="${s.key}" aria-pressed="${s.key === S.story}">${esc(s.title)}<span>${c.toLocaleString('en-US')}</span></button>`).join('') : '';
+    const nf = ['place', 'mus', 'acq', 'col'].filter(k => S[k] !== 'all').length;
+    const active = st || S.q || nf;
+    $('#fcount').textContent = nf || '';
+    $('#reset').hidden = !active;
+    $('#count').textContent = `${list.length.toLocaleString('en-US')} of ${base.length.toLocaleString('en-US')}`;
+
+    let html = ''; const ordered = [];
+    CATS.forEach(c => {
+      const g = list.filter(i => i.cat === c.key); if (!g.length) return;
+      const photos = g.filter(i => i.images.length), rows = g.filter(i => !i.images.length);
+      const collapsed = c.collapsed && !S.open[c.key] && !active;
+      const kc = c.key + ':c', kr = c.key + ':r';
+      const nc = S.shown[kc] || PAGE_CARDS, nr = S.shown[kr] || PAGE_ROWS;
+      html += `<section class="set" id="sec-${c.key}"><div class="set-head"><h2>${esc(c.title)}</h2><span class="small">${g.length.toLocaleString('en-US')}${rows.length && photos.length ? ` · ${photos.length.toLocaleString('en-US')} with photos` : ''}</span></div><p class="small cat-note">${esc(c.note)}</p>`;
+      if (collapsed) {
+        html += `<button class="more" type="button" data-expand="${c.key}"><b>Show all ${g.length.toLocaleString('en-US')} ${esc(c.title.toLowerCase())}</b><span>Folded away so the larger objects are easier to browse.</span></button>`;
+      } else {
+        if (photos.length) {
+          const vis = photos.slice(0, nc); ordered.push(...vis);
+          html += `<div class="grid">${vis.map(card).join('')}</div>`;
+          if (photos.length > nc) html += `<button class="more" type="button" data-more="${kc}"><b>Show ${Math.min(PAGE_CARDS * 2, photos.length - nc)} more</b><span>${(photos.length - nc).toLocaleString('en-US')} more with photos</span></button>`;
+        }
+        if (rows.length) {
+          const vis = rows.slice(0, nr); ordered.push(...vis);
+          html += `<div class="listhead"><b>Listed without photos</b><span class="small">${rows.length.toLocaleString('en-US')} entries from museum lists. Open one to see where it is and how to check it.</span></div><div class="lrows">${vis.map(row).join('')}</div>`;
+          if (rows.length > nr) html += `<button class="more" type="button" data-more="${kr}"><b>Show ${Math.min(PAGE_ROWS * 4, rows.length - nr)} more</b><span>${(rows.length - nr).toLocaleString('en-US')} more list entries</span></button>`;
+        }
+      }
+      html += `</section>`;
+    });
+    current = ordered;
+    $('#sections').innerHTML = html || '<div class="empty">No objects match. Clear the search or change a filter.</div>';
+  }
+
+  function setView(v) {
+    document.querySelectorAll('.view-btn').forEach(b => b.setAttribute('aria-selected', String(b.dataset.view === v)));
+    $('#view-collection').hidden = v !== 'collection';
+    $('#view-about').hidden = v !== 'about';
+    window.scrollTo(0, 0);
+  }
+  $('.views').addEventListener('click', e => { const b = e.target.closest('.view-btn'); if (b) setView(b.dataset.view); });
+  $('#states').addEventListener('click', e => {
+    const b = e.target.closest('.state-btn'); if (!b) return;
+    Object.assign(S, { state: b.dataset.state, story: null, place: 'all', mus: 'all', col: 'all', shown: {}, open: {} });
+    if (DATA[S.state]) buildFilters();
+    render();
+  });
+  $('#chips').addEventListener('click', e => { const b = e.target.closest('.schip[data-story]'); if (!b) return; S.story = S.story === b.dataset.story ? null : b.dataset.story; S.shown = {}; render(); });
+  let qt; $('#q').addEventListener('input', e => { clearTimeout(qt); qt = setTimeout(() => { S.q = e.target.value.trim().toLowerCase(); S.shown = {}; render(); }, 150); });
+  [['#f-place', 'place'], ['#f-mus', 'mus'], ['#f-acq', 'acq'], ['#f-col', 'col'], ['#f-sort', 'sort']].forEach(([sel, k]) => $(sel).addEventListener('change', e => { S[k] = e.target.value; S.shown = {}; render(); }));
+  $('#ftoggle').addEventListener('click', () => { const f = $('#filters'); f.hidden = !f.hidden; $('#ftoggle').setAttribute('aria-expanded', String(!f.hidden)); });
+  $('#reset').addEventListener('click', () => { Object.assign(S, { story: null, q: '', place: 'all', mus: 'all', acq: 'all', col: 'all', shown: {} }); $('#q').value = ''; buildFilters(); render(); });
+  $('#strip').addEventListener('click', e => { const b = e.target.closest('[data-id]'); if (b) open(b.dataset.id, true); });
+  $('#sections').addEventListener('click', e => {
+    const x = e.target.closest('[data-expand]'); if (x) { S.open[x.dataset.expand] = true; render(); return; }
+    const m = e.target.closest('[data-more]'); if (m) { const k = m.dataset.more; S.shown[k] = (S.shown[k] || (k.endsWith(':c') ? PAGE_CARDS : PAGE_ROWS)) + (k.endsWith(':c') ? PAGE_CARDS * 2 : PAGE_ROWS * 4); const y = scrollY; render(); scrollTo(0, y); return; }
+    const c = e.target.closest('[data-id]'); if (c) open(c.dataset.id, true);
+  });
+
+  const srcLinks = keys => keys.map(k => SOURCES[k].url ? `<a href="${SOURCES[k].url}" target="_blank" rel="noopener">${esc(SOURCES[k].label)}</a>` : esc(SOURCES[k].label)).join('; ');
+  let lastFocus = null, openId = null;
+  function open(id, push) {
+    const i = byId[id]; if (!i) return;
+    if ($('#sheet').hidden) lastFocus = document.activeElement;
+    openId = id;
+    const M = MUS[i.mus] || {};
+    const museum = i.museum || M.museum || i.mus, city = M.city || '', email = M.email || '';
+    const recLabel = i.record_label || M.label || 'Open the museum record';
+    const wayback = 'https://web.archive.org/web/*/' + String(i.record || '').replace(/#.*$/, '');
+    const idx = current.findIndex(x => x.id === id);
+    const notes = notesFor(i);
+    const credit = im => im.credit || museum;
+    const gallery = i.images.map(im => { const src = imgSrc(im); return `<figure><img ${src ? `src="${src}"` : `data-pack="${esc(fname(im.src))}"`} alt="${esc(i.term_en)}, ${esc(i.inv)}"><figcaption>Photo: ${esc(credit(im))}${im.photographer ? ' / ' + esc(im.photographer) : ''}${im.license ? ' · ' + esc(im.license) : ' · license as shown on the museum record'}</figcaption></figure>`; }).join('');
+    const rowh = (k, en, de) => en ? `<dt>${k}</dt><dd>${esc(en)}${de && de !== en ? `<span class="de">${esc(de)}</span>` : ''}</dd>` : '';
+    const maybe = i.maybe.length ? `<dt>Also possible</dt><dd>${esc(i.maybe.join(', '))} (the museum is not sure of the island)</dd>` : '';
+    $('#sheet').innerHTML = `
+      <div class="sheet-head">
+        <div><div class="eyebrow mono">${esc(i.inv)}</div><h2 id="sheet-title">${esc(i.term_en)}</h2><div class="sheet-sub">${esc(i.place_en)} · ${esc(i.date)}</div></div>
+        <div class="sheet-nav">
+          <button class="navbtn" type="button" data-go="-1" ${idx > 0 ? '' : 'disabled'} aria-label="Previous object">Prev</button>
+          <button class="navbtn" type="button" data-go="1" ${idx > -1 && idx < current.length - 1 ? '' : 'disabled'} aria-label="Next object">Next</button>
+          <button class="close" type="button" id="close">Close</button>
+        </div>
+      </div>
+      ${idx > -1 ? `<div class="sheet-pos">${idx + 1} of ${current.length} in this view</div>` : ''}
+      ${gallery ? `<div class="gallery">${gallery}</div>` : `<div class="nophoto">No photo is published for this artifact. It is known from the museum's own list of its holdings.</div>`}
+      <div class="block l1"><h3><span class="dot"></span>Museum record</h3>
+        <dl class="kv">
+          ${rowh('Object', i.term_en, i.term_de)}
+          ${rowh('Place', i.place_en, i.place_de)}
+          ${maybe}
+          ${rowh('Date', i.date, i.date_de)}
+          ${rowh(i.collector_role || 'Collector', i.collector === 'Unbekannt' ? 'Unknown' : i.collector, i.collector === 'Unbekannt' ? 'Unbekannt' : '')}
+          ${i.previous.map(p => rowh('Also named', prevEn(p), p !== prevEn(p) ? p : '')).join('')}
+          ${rowh('How the museum got it', i.acq_en, i.acq_de)}
+          ${rowh('Materials', i.mat_en, i.mat_de)}
+          ${i.dims.length ? rowh('Size', i.dims.map(x => x.replace(/^Size:\s*/, '')).join('; '), '') : ''}
+        </dl></div>
+      <div class="block l2"><h3><span class="dot"></span>History sources</h3>
+        ${notes.length ? notes.map(n => `<p class="note">${esc(n.t)}</p><div class="src">${n.q ? 'Raised in this collection; to be put to the museum' : 'Source: ' + (n.s.length ? srcLinks(n.s) : 'the museum record above')}</div>`).join('') : '<p class="note">No published notes added yet for this object.</p>'}
+      </div>
+      <div class="block l3"><h3><span class="dot"></span>Community knowledge</h3>
+        <div class="placeholder">Name in the local language: <i>waiting to be added</i></div>
+        <div class="placeholder">What it is, how it was used, who held it: <i>waiting to be added</i></div>
+        <div class="src">Each entry here will say who shared it, with their permission.</div>
+      </div>
+      <div class="trace"><h3>Follow it back</h3>
+        <div class="trace-row"><span>Where it is now</span><span>${esc(museum)}${city ? ', ' + esc(city) : ''}</span></div>
+        <div class="trace-row"><span>Catalog number</span><span><code class="mono">${esc(i.inv)}</code><button class="copy" type="button" data-copy="${esc(i.inv)}">Copy</button></span></div>
+        ${i.permalink ? `<div class="trace-row"><span>Permanent link</span><a href="${i.permalink}" target="_blank" rel="noopener">${esc(i.permalink)}</a></div>` : ''}
+        <div class="trace-row"><span>Museum record</span><a href="${i.record}" target="_blank" rel="noopener">${esc(recLabel)}</a></div>
+        <div class="trace-row"><span>Archived copies</span><a href="${wayback}" target="_blank" rel="noopener">Check the Wayback Machine</a></div>
+        ${email ? `<div class="trace-row"><span>Ask the museum</span><span><code class="mono">${esc(email)}</code><button class="copy" type="button" data-copy="${esc(email)}">Copy</button></span></div>` : `<div class="trace-row"><span>Ask the museum</span><span>Use the contact details on the museum's website and quote the catalog number.</span></div>`}
+        ${i.updated ? `<div class="trace-row"><span>Record last updated</span><span class="mono">${esc(i.updated)}</span></div>` : ''}
+      </div>`;
+    $('#sheet').hidden = false; $('#scrim').hidden = false; $('#sheet').scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+    $('#close').focus();
+    if (push) try { history.replaceState(null, '', '#' + id); } catch (e) {}
+  }
+  function go(d) { const idx = current.findIndex(x => x.id === openId); const n = current[idx + d]; if (n) open(n.id, true); }
+  function close() {
+    $('#sheet').hidden = true; $('#scrim').hidden = true; document.body.style.overflow = ''; openId = null;
+    try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+    if (lastFocus) lastFocus.focus();
+  }
+  $('#scrim').addEventListener('click', close);
+  document.addEventListener('keydown', e => {
+    if ($('#sheet').hidden) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowRight') go(1);
+    if (e.key === 'ArrowLeft') go(-1);
+  });
+  $('#sheet').addEventListener('click', e => {
+    if (e.target.id === 'close') return close();
+    const g = e.target.closest('[data-go]'); if (g) return go(+g.dataset.go);
+    const b = e.target.closest('.copy'); if (!b) return;
+    const done = () => { b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy', 1500); };
+    try { navigator.clipboard.writeText(b.dataset.copy).then(done, () => selectNear(b)); } catch (err) { selectNear(b); }
+  });
+  function selectNear(b) { const r = document.createRange(); r.selectNodeContents(b.previousElementSibling); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected, press copy'; }
+
+  if (matchMedia('(min-width: 861px)').matches) { $('#filters').hidden = false; $('#ftoggle').setAttribute('aria-expanded', 'true'); }
+  renderStates();
+  const h = location.hash.slice(1);
+  loadState('Pohnpei').then(() => {
+    buildFilters(); render();
+    if (h === 'about') setView('about');
+    else if (h && byId[h]) open(h, false);
+  });
+})();
+</script>
